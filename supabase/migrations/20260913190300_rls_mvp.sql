@@ -1,5 +1,5 @@
-# RLS multi-usuário: cada linha só é acessível pelo dono (auth.uid() = user_id).
-# UI de login fica para depois; schema e policies já nascem prontos para Auth.
+-- RLS multi-usuário: cada linha só é acessível pelo dono (auth.uid() = user_id).
+-- UI de login fica para depois; schema e policies já nascem prontos para Auth.
 
 alter table public.categorias enable row level security;
 alter table public.receitas enable row level security;

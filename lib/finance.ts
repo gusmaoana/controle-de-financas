@@ -57,3 +57,23 @@ export function summarize(transactions: Transaction[]) {
   }
   return { income, expense, balance: income - expense }
 }
+
+export function monthBounds(isoDate: string) {
+  const [year, month] = isoDate.split("-").map(Number)
+  const start = `${year}-${String(month).padStart(2, "0")}-01`
+  const lastDay = new Date(year, month, 0).getDate()
+  const end = `${year}-${String(month).padStart(2, "0")}-${String(lastDay).padStart(2, "0")}`
+  return { start, end }
+}
+
+export function dayLabel(isoDate: string) {
+  const [year, month, day] = isoDate.split("-")
+  return `Dia ${day}/${month}/${year}`
+}
+
+export function monthTitle(year: number, month: number) {
+  const name = new Date(year, month - 1, 1).toLocaleDateString("pt-BR", {
+    month: "long",
+  })
+  return `Mês ${name}/${year}`
+}

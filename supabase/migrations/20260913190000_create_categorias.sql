@@ -1,4 +1,4 @@
-# Categorias — por usuário (multi-usuário; UI de login depois)
+-- Categorias — por usuário (multi-usuário; UI de login depois)
 create extension if not exists "pgcrypto";
 
 create table if not exists public.categorias (

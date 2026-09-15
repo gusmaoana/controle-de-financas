@@ -1,4 +1,4 @@
-# Despesas — lançamentos de saída por usuário
+-- Despesas — lançamentos de saída por usuário
 create table if not exists public.despesas (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users (id) on delete cascade,
